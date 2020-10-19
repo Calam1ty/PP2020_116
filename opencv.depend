@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1603053884 source:c:\users\zver\desktop\cpp\opencv\main.cpp
+	"opencv2/imgproc.hpp"
+	"opencv2/highgui.hpp"
+	<Windows.h>
+	<iostream>
+	<opencv2/opencv.hpp>
+	<cstdlib>
+
