@@ -214,7 +214,7 @@ for(int y = 200; y < 650; y++){
                 ZeroMemory(&iNPUT, sizeof(iNPUT));
 
                 Sleep(500);
-                SetCursorPos(p.x+800, p.y-50);
+                SetCursorPos(p.x+795, p.y-50);
                 Sleep(500);
 
                 INPUT iNPUT2 = {0};
@@ -235,7 +235,7 @@ for(int y = 200; y < 650; y++){
 
                 Sleep(500);
 
-                SetCursorPos(650, 550);
+                SetCursorPos(610, 550);
                 Sleep(500);
                 iNPUT.type = INPUT_MOUSE;
                 iNPUT.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
@@ -245,7 +245,7 @@ for(int y = 200; y < 650; y++){
                 iNPUT.mi.dwFlags = MOUSEEVENTF_LEFTUP;
                 SendInput(1,&iNPUT, sizeof(iNPUT));
                 Sleep(500);
-                SetCursorPos(105, 365);
+                SetCursorPos(105, 348);
                 iNPUT.type = INPUT_MOUSE;
                 iNPUT.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
                 SendInput(1,&iNPUT, sizeof(iNPUT));
@@ -254,7 +254,7 @@ for(int y = 200; y < 650; y++){
                 iNPUT.mi.dwFlags = MOUSEEVENTF_LEFTUP;
                 SendInput(1,&iNPUT, sizeof(iNPUT));
                 Sleep(500);
-                 for(int y = 570; y < 610; y++){
+                 for(int y = 565; y < 860; y++){
                         for(int x = 1605; x < 1900; x++){
                                 SetCursorPos(x,y);
                                 iNPUT.type = INPUT_MOUSE;
@@ -265,13 +265,13 @@ for(int y = 200; y < 650; y++){
                                 iNPUT.mi.dwFlags = MOUSEEVENTF_RIGHTUP;
                                 SendInput(1,&iNPUT, sizeof(iNPUT));
                                 x=x+34;
-                                Sleep(50);
+                                Sleep(100);
                                 if (GetAsyncKeyState(VK_NUMPAD4))
                             {
                             return 0;
                             }
                         }
-                        y=y+34;
+                        y=y+36;
                  }
 
                 SetCursorPos(960, 580);
@@ -282,7 +282,7 @@ for(int y = 200; y < 650; y++){
                 ZeroMemory(&iNPUT, sizeof(iNPUT));
 
                 Sleep(500);
-                SetCursorPos(p.x-800, p.y-50);
+                SetCursorPos(p.x-795, p.y-50);
                 Sleep(500);
 
                 iNPUT2.type = INPUT_MOUSE;
