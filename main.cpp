@@ -21,21 +21,21 @@ Mat hwnd2mat(HWND hwnd)
     hwindowCompatibleDC=CreateCompatibleDC(hwindowDC);
     SetStretchBltMode(hwindowCompatibleDC,COLORONCOLOR);
 
-    RECT windowsize;    // get the height and width of the screen
+    RECT windowsize;                                                                    // get the height and width of the screen
     GetClientRect(hwnd, &windowsize);
 
     srcheight = windowsize.bottom;
     srcwidth = windowsize.right;
-    height = windowsize.bottom/1;  //change this to whatever size you want to resize to
+    height = windowsize.bottom/1;                                                       //change this to whatever size you want to resize to
     width = windowsize.right/1;
 
     src.create(height,width,CV_8UC4);
 
     // create a bitmap
     hbwindow = CreateCompatibleBitmap( hwindowDC, width, height);
-    bi.biSize = sizeof(BITMAPINFOHEADER);    //http://msdn.microsoft.com/en-us/library/windows/window/dd183402%28v=vs.85%29.aspx
+    bi.biSize = sizeof(BITMAPINFOHEADER);                                               //http://msdn.microsoft.com/en-us/library/windows/window/dd183402%28v=vs.85%29.aspx
     bi.biWidth = width;
-    bi.biHeight = -height;  //this is the line that makes it draw upside down or not
+    bi.biHeight = -height;                                                              //this is the line that makes it draw upside down or not
     bi.biPlanes = 1;
     bi.biBitCount = 32;
     bi.biCompression = BI_RGB;
@@ -112,12 +112,12 @@ char mainWindow[] = "Main";
         //-----------------------------------------------------------------------------------------
 
         for(int y = 834; y < 854; y++){
-			for(int x = 1793; x < 1911; x++){  //x=1870 y= 800-924
+			for(int x = 1793; x < 1911; x++){                                                                    //x=1870 y= 800-924
 				int value = src.at<uchar>(y, x);
 				if(value == 255){
 					Rect rect2;
 					int count = floodFill(src, Point(x, y), Scalar(200), &rect2);
-					//cout << "y= " << y << " x= " << x << ", rect size = " << rect.width <<  endl;
+                                                                                                                    //cout << "y= " << y << " x= " << x << ", rect size = " << rect.width <<  endl;
 					if(rect2.width >= min2 && rect2.width <= max
 						&& rect2.height >= min2 && rect2.height <= max){
 						rectangle(src, rect2, Scalar(hmin2, smin2, vmin2, 4));
@@ -141,8 +141,7 @@ for(int y = 200; y < 650; y++){
 
 					Rect rect;
 					int count = floodFill(src, Point(x, y), Scalar(200), &rect);
-					//cout << "y= " << y << " x= " << x << ", rect size = " << rect.width <<  endl;
-
+                                                                                                //cout << "y= " << y << " x= " << x << ", rect size = " << rect.width <<  endl;
 					if(rect.width >= min && rect.width <= max
 						&& rect.height >= min && rect.height <= max){
 						rectangle(src, rect, Scalar(hmin, smin, vmin, 4));
